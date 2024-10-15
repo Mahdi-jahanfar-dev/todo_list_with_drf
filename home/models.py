@@ -4,7 +4,7 @@ from django.utils.text import slugify
 
 
 class Todo(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='todos')
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='todos', null=True, blank=True)
     title = models.CharField(max_length=100)
     description = models.TextField()
     completed = models.BooleanField(default=False)
